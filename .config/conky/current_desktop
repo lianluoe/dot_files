@@ -1,0 +1,45 @@
+#!/bin/bash
+desktops=`bspc query -D`
+current=`bspc query -D -d focused`
+counter="1"
+for i in $desktops
+do
+	if [ "$i" == "$current" ]
+	then
+		break
+	fi
+	((counter++))
+done
+
+echo -n '${color '#94bf9b'}Desktop '
+if [ "$counter" == "1" ]
+then
+	echo -n '0001'
+elif [ "$counter" == "2" ]
+then
+	echo -n '0010'
+elif [ "$counter" == "3" ]
+then
+	echo -n '0011'
+elif [ "$counter" == "4" ]
+then
+	echo -n '0100'
+elif [ "$counter" == "5" ]
+then
+	echo -n '0101'
+elif [ "$counter" == "6" ]
+then
+	echo -n '0110'
+elif [ "$counter" == "7" ]
+then
+	echo -n '0111'
+elif [ "$counter" == "8" ]
+then
+	echo -n '1000'
+elif [ "$counter" == "9" ]
+then
+	echo -n '1001'
+else
+	echo -n '0000'
+fi
+echo -n '${color}'

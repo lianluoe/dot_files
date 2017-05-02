@@ -1,0 +1,34 @@
+#!/bin/bash
+value=`xbacklight -get | awk '{print int($1+0.5)}'`
+if [ "$value" -le "10" ]
+then
+	echo -n '${color '#666600'}Backlight [\#---------]'
+elif [ "$value" -le "20" ] && [ "$value" -gt "10" ]
+then
+	echo -n '${color '#777700'}Backlight [\#\#--------]'
+elif [ "$value" -le "30" ] && [ "$value" -gt "20" ]
+then
+	echo -n '${color '#888800'}Backlight [\#\#\#-------]'
+elif [ "$value" -le "40" ] && [ "$value" -gt "30" ]
+then
+	echo -n '${color '#999900'}Backlight [\#\#\#\#------]'
+elif [ "$value" -le "50" ] && [ "$value" -gt "40" ]
+then
+	echo -n '${color '#aaaa00'}Backlight [\#\#\#\#\#-----]'
+elif [ "$value" -le "60" ] && [ "$value" -gt "50" ]
+then
+	echo -n '${color '#bbbb00'}Backlight [\#\#\#\#\#\#----]'
+elif [ "$value" -le "70" ] && [ "$value" -gt "60" ]
+then
+	echo -n '${color '#cccc00'}Backlight [\#\#\#\#\#\#\#---]'
+elif [ "$value" -le "80" ] && [ "$value" -gt "70" ]
+then
+	echo -n '${color '#dddd00'}Backlight [\#\#\#\#\#\#\#\#--]'
+elif [ "$value" -le "90" ] && [ "$value" -gt "80" ]
+then
+	echo -n '${color '#eeee00'}Backlight [\#\#\#\#\#\#\#\#\#-]'
+else
+	echo -n '${color '#ffff00'}Backlight [\#\#\#\#\#\#\#\#\#\#]'
+fi
+echo -n " $value"
+echo -n '${color}'

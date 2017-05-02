@@ -1,0 +1,56 @@
+URxvt*font: xft:monospace:pixelsize=20
+URxvt*boldFont: xft:monospace:style=bold:pixelsize=20
+*background: #0e181a
+*foreground: #FFFFFF
+!
+! ! black
+*color0:     #121212
+*color8:     #000000
+!
+! ! red
+*color1:     #cd7f8d
+*color9:     #FFC715
+!
+! ! green
+*color2:     #98bf47
+*color10:    #98bf47
+!
+! ! yellow
+*color3:     #FFC715
+*color11:    #EBB713
+!
+! ! blue
+*color4:     #58698C
+*color12:    #58698C
+!
+! ! magenta
+*color5:     #B23450
+*color13:    #B23450
+!
+! ! cyan
+*color6:     #56a8ac
+*color14:    #56a8ac
+!
+! ! white
+*color7:     #FFFFFF
+*color15:    #DDDDDD
+!
+! !cursor
+*cursorColor: #FFC715
+URxvt.internalBorder: 22
+URxvt*lineSpace: 4
+URxvt*scrollBar: false
+URxvt*scrollColor: #ffc715
+URxvt.geometry: 80x25
+URxvt*saveLines: 1000
+URxvt*cursorUnderline: true
+URxvt*cursorColor: #ffc715
+URxvt*cursorBlink: true
+URxvt*underlineColor: #303030
+URxvt*allow_bold: true
+! do not scroll with output
+URxvt*scrollTtyOutput: false
+! scroll in relation to buffer (with mouse scroll or Shift+Page Up)
+URxvt*scrollWithBuffer: true
+! scroll back to the bottom on keypress
+URxvt*scrollTtyKeypress: true

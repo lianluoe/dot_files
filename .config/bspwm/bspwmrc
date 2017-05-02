@@ -1,0 +1,37 @@
+#! /bin/sh
+
+
+# bspc monitor -d I II III IV V VI VII VIII IX X
+bspc monitor -d 0001 0010 0011 0100 0101 0110 0111 1000 1001 0000
+# bspc monitor DP1 -d XI
+
+bspc config border_width          0
+bspc config window_gap            20
+bspc config active_border_color   '#612f5f'
+bspc config normal_border_color   '#263a41'
+bspc config focused_border_color  '#612f5f'
+bspc config split_ratio           0.50
+bspc config borderless_monocle    true
+bspc config gapless_monocle       true
+bspc config focus_follows_pointer true
+bspc config bottom_padding        24
+
+#bspc rule -a Firefox desktop='^3'
+#bspc rule -a Gimp desktop='^8' state=floating follow=on
+#bspc rule -a URxvt:main desktop=^1
+#bspc rule -a URxvt:ranger floating=off desktop=^4
+#bspc rule -a URxvt:ncmpcpp floating=off desktop=^5
+#bspc rule -a URxvt:newsbeuter floating=off desktop=^6
+#bspc rule -a URxvt:rtorrent desktop=^9
+#bspc rule -a URxvt:cprogram desktop=^4
+
+# auto start
+sxhkd &
+compton -b
+feh --bg-fill /HD/FS/Picture/WallPaper/blurry_sunset-wallpaper-2560x1440.jpg
+conky -c ~/.config/conky/conky.conf
+stalonetray --dockapp-mode simple &
+qxkb &
+nm-applet &
+dunst &
+mpd &

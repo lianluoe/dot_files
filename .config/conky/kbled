@@ -1,0 +1,15 @@
+#!/bin/bash
+value=`cat /sys/class/leds/asus\:\:kbd_backlight/brightness`
+if [ "$value" == 0 ]
+then
+	echo -n '${color '#cc2222'}Kb 00${color}'
+elif [ "$value" == 1 ]
+then
+	echo -n '${color '#dd2222'}Kb 01${color}'
+elif [ "$value" == 2 ]
+then
+	echo -n '${color '#ee2222'}Kb 10${color}'
+elif [ "$value" == 3 ]
+then
+	echo -n '${color '#ff2222'}Kb 11${color}'
+fi

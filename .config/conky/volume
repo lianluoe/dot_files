@@ -1,0 +1,33 @@
+#!/bin/bash
+value=`pactl list sinks | grep '^[[:space:]]Volume:' | head -n $(( $SINK + 1 )) | tail -n 1 | sed -e 's,.* \([0-9][0-9]*\)%.*,\1,'`
+if [ "$value" -le "10" ]
+then
+	echo -n '${color '#226666'} Volume [\#---------]'
+elif [ "$value" -le "20" ] && [ "$value" -gt "10" ]
+then
+	echo -n '${color '#227777'} Volume [\#\#--------]'
+elif [ "$value" -le "30" ] && [ "$value" -gt "20" ]
+then
+	echo -n '${color '#228888'} Volume [\#\#\#-------]'
+elif [ "$value" -le "40" ] && [ "$value" -gt "30" ]
+then
+	echo -n '${color '#229999'} Volume [\#\#\#\#------]'
+elif [ "$value" -le "50" ] && [ "$value" -gt "40" ]
+then
+	echo -n '${color '#22aaaa'} Volume [\#\#\#\#\#-----]'
+elif [ "$value" -le "60" ] && [ "$value" -gt "50" ]
+then
+	echo -n '${color '#22bbbb'} Volume [\#\#\#\#\#\#----]'
+elif [ "$value" -le "70" ] && [ "$value" -gt "60" ]
+then
+	echo -n '${color '#22cccc'} Volume [\#\#\#\#\#\#\#---]'
+elif [ "$value" -le "80" ] && [ "$value" -gt "70" ]
+then
+	echo -n '${color '#22dddd'} Volume [\#\#\#\#\#\#\#\#--]'
+elif [ "$value" -le "90" ] && [ "$value" -gt "80" ]
+then
+	echo -n '${color '#22eeee'} Volume [\#\#\#\#\#\#\#\#\#-]'
+else
+	echo -n '${color '#22ffff'} Volume [\#\#\#\#\#\#\#\#\#\#]'
+fi
+echo -n " $value"

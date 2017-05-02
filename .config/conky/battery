@@ -1,0 +1,42 @@
+#!/bin/bash
+capacity=`cat /sys/class/power_supply/BAT0/capacity`
+if [ "$capacity" -le "10" ]
+then
+	echo -n '${color '#ff6622'}Battery [\#---------]'
+elif [ "$capacity" -le "20" ] && [ "$capacity" -gt "10" ]
+then
+	echo -n '${color '#ee7722'}Battery [\#\#--------]'
+elif [ "$capacity" -le "30" ] && [ "$capacity" -gt "20" ]
+then
+	echo -n '${color '#dd8822'}Battery [\#\#\#-------]'
+elif [ "$capacity" -le "40" ] && [ "$capacity" -gt "30" ]
+then
+	echo -n '${color '#cc9922'}Battery [\#\#\#\#------]'
+elif [ "$capacity" -le "50" ] && [ "$capacity" -gt "40" ]
+then
+        echo -n '${color '#bbaa22'}Battery [\#\#\#\#\#-----]'
+elif [ "$capacity" -le "60" ] && [ "$capacity" -gt "50" ]
+then
+        echo -n '${color '#aabb22'}Battery [\#\#\#\#\#\#----]'
+elif [ "$capacity" -le "70" ] && [ "$capacity" -gt "60" ]
+then
+        echo -n '${color '#99cc22'}Battery [\#\#\#\#\#\#\#---]'
+elif [ "$capacity" -le "80" ] && [ "$capacity" -gt "70" ]
+then
+        echo -n '${color '#88dd22'}Battery [\#\#\#\#\#\#\#\#--]'
+elif [ "$capacity" -le "90" ] && [ "$capacity" -gt "80" ]
+then
+        echo -n '${color '#77ee22'}Battery [\#\#\#\#\#\#\#\#\#-]'
+else
+	echo -n '${color '#66ff22'}Battery [\#\#\#\#\#\#\#\#\#\#]'
+fi
+
+status=`cat /sys/class/power_supply/BAT0/status`
+if [ "$status" == "Charging" ]
+then
+	echo -n '+'
+else
+	echo -n '-'
+fi
+echo -n " $capacity"
+echo -n '${color}'

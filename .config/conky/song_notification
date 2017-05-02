@@ -1,0 +1,3 @@
+#!/bin/bash
+IFS=$'\t' read title artist <<< "$(mpc --format="%title%\t%artist%")"
+notify-send --expire-time=5000 --app-name=ncmpcpp "$title  -  $artist"

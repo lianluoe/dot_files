@@ -4,42 +4,43 @@ current=`bspc query -D -d focused`
 counter="1"
 for i in $desktops
 do
-	if [ "$i" == "$current" ]
-	then
-		break
-	fi
-	((counter++))
+        if [ "$i" == "$current" ]
+        then
+                break
+        fi  
+        ((counter++))
 done
 
-echo -n '${color '#94bf9b'}Desktop '
 if [ "$counter" == "1" ]
 then
-	echo -n '0001'
+
+if [ "$counter" == "1" ]
+then
+        echo -n '${color '#299d19'}0001${color} 0010 0011 0100 0101 0110 0111 1000 1001 0000'
 elif [ "$counter" == "2" ]
 then
-	echo -n '0010'
+        echo -n '0001 ${color '#299d19'}0010${color} 0011 0100 0101 0110 0111 1000 1001 0000'
 elif [ "$counter" == "3" ]
 then
-	echo -n '0011'
+        echo -n '0001 0010 ${color '#299d19'}0011${color} 0100 0101 0110 0111 1000 1001 0000'
 elif [ "$counter" == "4" ]
 then
-	echo -n '0100'
+        echo -n '0001 0010 0011 ${color '#299d19'}0100${color} 0101 0110 0111 1000 1001 0000'
 elif [ "$counter" == "5" ]
 then
-	echo -n '0101'
+        echo -n '0001 0010 0011 0100 ${color '#299d19'}0101${color} 0110 0111 1000 1001 0000'
 elif [ "$counter" == "6" ]
 then
-	echo -n '0110'
+        echo -n '0001 0010 0011 0100 0101 ${color '#299d19'}0110${color} 0111 1000 1001 0000'
 elif [ "$counter" == "7" ]
 then
-	echo -n '0111'
+        echo -n '0001 0010 0011 0100 0101 0110 ${color '#299d19'}0111${color} 1000 1001 0000'
 elif [ "$counter" == "8" ]
 then
-	echo -n '1000'
+        echo -n '0001 0010 0011 0100 0101 0110 0111 ${color '#299d19'}1000${color} 1001 0000'
 elif [ "$counter" == "9" ]
 then
-	echo -n '1001'
+        echo -n '0001 0010 0011 0100 0101 0110 0111 1000 ${color '#299d19'}1001${color} 0000'
 else
-	echo -n '0000'
+        echo -n '0001 0010 0011 0100 0101 0110 0111 1000 1001 ${color '#299d19'}0000${color}'
 fi
-echo -n '${color}'

@@ -1,50 +1,49 @@
 URxvt*font: xft:monospace:pixelsize=20
-URxvt*boldFont: xft:monospace:style=bold:pixelsize=20
-*background: #0e181a
-*foreground: #FFFFFF
+*background: #140e12
+*foreground: #9d9d9d
 !
 ! ! black
 *color0:     #121212
 *color8:     #000000
 !
 ! ! red
-*color1:     #cd7f8d
-*color9:     #FFC715
+*color1:     #982222
+*color9:     #660000
 !
 ! ! green
-*color2:     #98bf47
-*color10:    #98bf47
+*color2:     #7c9645
+*color10:    #567e00
 !
 ! ! yellow
-*color3:     #FFC715
-*color11:    #EBB713
+*color3:     #e0a900
+*color11:    #664d00
 !
 ! ! blue
-*color4:     #58698C
-*color12:    #58698C
+*color4:     #36528a
+*color12:    #36528a
 !
 ! ! magenta
 *color5:     #B23450
-*color13:    #B23450
+*color13:    #9f367b
 !
 ! ! cyan
 *color6:     #56a8ac
-*color14:    #56a8ac
+*color14:    #0e7579
 !
 ! ! white
-*color7:     #FFFFFF
-*color15:    #DDDDDD
+*color7:     #9d9d9d
+*color15:    #bbbbbb
 !
-! !cursor
-*cursorColor: #FFC715
-URxvt.internalBorder: 22
+! ! cursor
+*cursorColor: #982222
+URxvt.internalBorder: 0
 URxvt*lineSpace: 4
 URxvt*scrollBar: false
 URxvt*scrollColor: #ffc715
-URxvt.geometry: 80x25
+URxvt.geometry: 80x23
 URxvt*saveLines: 1000
 URxvt*cursorUnderline: true
-URxvt*cursorColor: #ffc715
+!URxvt*cursorColor: #ffc715
 URxvt*cursorBlink: true
 URxvt*underlineColor: #303030
 URxvt*allow_bold: true

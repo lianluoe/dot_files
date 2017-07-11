@@ -16,7 +16,7 @@ hc keyunbind --all
 # keybindings
 # if you have a super key you will be much happier with Mod set to Mod4
 #Mod=Mod1    # Use alt as the main modifier
-Mod=Mod4   # Use the super key as the main modifier
+Mod=Mod4   # Use the super key as the main modifdmenu_runier
 
 TERMINAL=urxvt
 hc keybind $Mod-Shift-q quit
@@ -168,7 +168,7 @@ herbstclient set tree_style '╾│ ├└╼─┐'
 panel=~/.config/herbstluftwm/panel.sh
 [ -x "$panel" ] || panel=/etc/xdg/herbstluftwm/panel.sh
 for monitor in $(herbstclient list_monitors | cut -d: -f1) ; do
-    # start it on each monitor
+    # start it on each monito
     "$panel" $monitor &
 done
 
@@ -189,7 +189,9 @@ hc keybind $Mod-x spawn maim /home/m47h4r/$(date +%s).png
 hc keybind $Mod-Control-x spawn maim -s /home/m47h4r/$(date +%s).png
 
 # autostart
-compton &
-feh --bg-fill ~/SS/Picture/WallPaper/blurry_pic_herbstluftwm.png
-mpd &
-tint2 &
+exec compton &
+exec feh --bg-fill ~/SS/Picture/WallPaper/blurry_pic_herbstluftwm.png
+exec mpd &
+exec tint2 &
+exec qxkb &
+exec nm-applet &

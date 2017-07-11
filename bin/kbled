@@ -1,0 +1,19 @@
+#!/bin/bash
+value=`cat /sys/class/leds/asus\:\:kbd_backlight/brightness`
+op=$1
+if [ "$value" -lt "3" ]
+then
+	if [ "$op" == "inc" ]
+	then
+		((value++))
+		echo -n "$value" > /sys/class/leds/asus\:\:kbd_backlight/brightness
+	fi
+fi
+if [ "$value" -gt "0" ]
+then
+	if [ "$op" == "dec" ]
+	then
+		((value--))
+		echo -n "$value" > /sys/class/leds/asus\:\:kbd_backlight/brightness
+	fi
+fi

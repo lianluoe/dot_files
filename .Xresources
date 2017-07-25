@@ -1,9 +1,9 @@
-URxvt*font: xft:monospace:pixelsize=20
-*background: #140e12
-*foreground: #9d9d9d
+URxvt*font: xft:monospace:pixelsize=20, xft:FontAwesome:pixelsize=20
+*background: #1d2021
+*foreground: #9d8f7c
 !
 ! ! black
-*color0:     #121212
+*color0:     #1d2021
 *color8:     #000000
 !
 ! ! red
@@ -23,7 +23,7 @@ URxvt*font: xft:monospace:pixelsize=20
 *color12:    #36528a
 !
 ! ! magenta
-*color5:     #B23450
+*color5:     #cf145b
 *color13:    #9f367b
 !
 ! ! cyan
@@ -31,18 +31,20 @@ URxvt*font: xft:monospace:pixelsize=20
 *color14:    #0e7579
 !
 ! ! white
-*color7:     #9d9d9d
+*color7:     #9d8f7c
 *color15:    #bbbbbb
 !
 ! ! cursor
-*cursorColor: #982222
-URxvt.internalBorder: 0
+*cursorColor: #cf145b
+URxvt.internalBorder: 17
+URxvt.depth: 32
+
 URxvt*lineSpace: 4
 URxvt*scrollBar: false
 URxvt*scrollColor: #ffc715
 URxvt.geometry: 80x23
 URxvt*saveLines: 1000
-URxvt*cursorUnderline: true
+URxvt*cursorUnderline: false
 !URxvt*cursorColor: #ffc715
 URxvt*cursorBlink: true
 URxvt*underlineColor: #303030
@@ -53,3 +55,15 @@ URxvt*scrollTtyOutput: false
 URxvt*scrollWithBuffer: true
 ! scroll back to the bottom on keypress
 URxvt*scrollTtyKeypress: true
+URxvt*transparent: true
+URxvt*shading: 25
+!URxvt*blurRadius: 50x50
+
+! ------------------------------------------------------------------------------
+! ROFI Color theme
+! ------------------------------------------------------------------------------
+rofi.color-enabled: true
+rofi.color-window: #1d2021, #1d2021, #1d2021
+rofi.color-normal: #1d2021, #9d8f7c, #1d2021, #1d2021, #7c9645
+rofi.color-active: argb:13000000, #268bd2, argb:13000000, argb:7b268bd2, #ffffff
+rofi.color-urgent: argb:14000000, #dc322f, argb:14000000, argb:7edc322f, #ffffff

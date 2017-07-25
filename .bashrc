@@ -5,15 +5,30 @@
 # If not running interactively, don't do anything
 [[ $- != *i* ]] && return
 
+#-----------------------------------------------
+#	ALIAS
+#-----------------------------------------------
 alias ls='ls --color=auto'
+alias ll='ls --color=auto -ltrh'
+alias df='df -h'
 alias grep='grep --color=auto'
 alias TODO='vim ~/TODO'
-alias CLOCK='tty-clock -c -C 2'
-alias PIPE='pipes -t 1 -r 0 -p 1'
-alias MOON='curl wttr.in/moon'
-alias WEATHER='curl wttr.in/sanandaj'
-COLOR="\[$(tput setaf 3)\]"
-RESET="\[$(tput sgr0)\]"
+alias EXC='vim ~/SS/Life\ Status/exercises.txt'
+alias W='cd ~/SS/Programming/NodeJS/Codes/Udemy'
 
-export PS1="${COLOR}╔ \W\n╚ \$${RESET} "
-echo -en "\033[33m"; cat /home/mazhar/.config/ascii_art/skull
+COLOR="\[$(tput setaf 5)\]"
+RESET="\[$(tput sgr0)\]"
+#PS1="${COLOR}\u @ \h ${RESET}\W ${COLOR}\$${RESET} "
+export PS1="${COLOR}★ \W${RESET} "
+echo -en "\033[35m";cat /home/m47h4r/.config/ascii_art/m
+
+#-----------------------------------------------
+#	COLORED MAN PAGES
+#-----------------------------------------------
+export LESS_TERMCAP_mb=$'\e[0;31m'
+export LESS_TERMCAP_md=$'\e[0;36m'
+export LESS_TERMCAP_me=$'\e[0m'
+export LESS_TERMCAP_se=$'\e[0m'
+export LESS_TERMCAP_so=$'\e[7m'
+export LESS_TERMCAP_ue=$'\e[0m'
+export LESS_TERMCAP_us=$'\e[0;35m'

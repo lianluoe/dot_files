@@ -145,7 +145,7 @@ mode "resize" {
         bindsym h resize shrink width 2 px or 2 ppt
         bindsym j resize grow height 2 px or 2 ppt
         bindsym k resize shrink height 2 px or 2 ppt
-        bindsym l resize grow width 2 px 2 10 ppt
+        bindsym l resize grow width 2 px or 2 ppt
 
         # same bindings, but for the arrow keys
         bindsym Left resize shrink width 2 px or 2 ppt
@@ -170,6 +170,7 @@ mode "launch" {
 	bindsym g exec gimp
 	bindsym v exec virtualbox
 	bindsym b exec tor-browser-en
+  bindsym s exec code
 	bindsym Escape mode "default"
 	bindsym Return mode "default"
 }
@@ -178,7 +179,7 @@ bindsym $mod+o mode "launch"
 
 # colors
 # class                 border  backgr. text    indicator child_border
-client.focused          #7c9645 #7c9645 #333333 #aaaa00   #7c9645
+client.focused          #cf145b #cf145b #333333 #c834c3   #cf145b
 client.focused_inactive #1d2021 #1d2021 #9d8f7c #1d2021   #1d2021
 client.unfocused        #1d2021 #1d2021 #9d8f7c #1d2021   #1d2021
 client.urgent           #ff0000 #ff0000 #9d8f7c #ff0000   #ff0000
@@ -189,7 +190,7 @@ client.background       #ffffff
 # focus follows mouse
 focus_follows_mouse yes 
 # border style
-new_window pixel 2
+new_window pixel 4
 # hide alone-window borders
 hide_edge_borders none
 
@@ -199,25 +200,25 @@ gaps outer 0
 
 # Start i3bar to display a workspace bar (plus the system information i3status
 # finds out, if available)
-bar {
-	mode dock
-	position bottom
-	tray_output primary
+#bar {
+#	mode dock
+#	position bottom
+#	tray_output primary
 #	separator_symbol "   "
 #        status_command i3status	
-	i3bar_command #i3bar
-	colors {
-        background #1d2021
-        statusline #9d8f7c
+#	i3bar_command #i3bar
+#	colors {
+#       background #1d2021
+#      statusline #9d8f7c
 #        separator  #7c9645
-
-        focused_workspace  #1d2021 #1d2021 #7c9645
-        active_workspace   #1d2021 #1d2021 #aaaa00
-        inactive_workspace #1d2021 #1d2021 #9d8f7c
-        urgent_workspace   #1d2021 #1d2021 #ff0000
-        binding_mode       #2f343a #900000 #ffffff
-    }
-}
+#
+#        focused_workspace  #1d2021 #1d2021 #7c9645
+#        active_workspace   #1d2021 #1d2021 #aaaa00
+#        inactive_workspace #1d2021 #1d2021 #9d8f7c
+#        urgent_workspace   #1d2021 #1d2021 #ff0000
+#        binding_mode       #2f343a #900000 #ffffff
+#    }
+#}
 
 bindsym $mod+x exec maim /home/m47h4r/$(date +%s).png
 bindsym $mod+ctrl+x exec maim -s /home/m47h4r/$(date +%s).png
@@ -234,13 +235,13 @@ bindsym XF86AudioLowerVolume exec ~/bin/vol_dec
 bindsym XF86AudioRaiseVolume exec ~/bin/vol_inc
 bindsym $mod+m exec ~/bin/dual.sh
 bindsym $mod+shift+m exec ~/bin/mono.sh
+bindsym $mod+i exec ~/bin/kb_layout
 
 # autostart
 exec compton &
 exec ~/bin/wallpaper.sh
 exec mpd &
-#exec qxkb &
 exec nm-applet &
 exec_always --no-startup-id ~/.config/polybar/launch.sh
-#exec setxkbmap -model asus_laptop -layout us,ir -option grp:alt_shift_toggle &
-exec setxkbmap -layout us,ir -option grp:alt_shift_toggle &
+exec ~/bin/kb_layout
+exec ~/bin/battery_warning.sh &

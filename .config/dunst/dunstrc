@@ -1,5 +1,5 @@
 [global]
-    font = Monospace 12
+    font = Monospace 10
     
     # Allow a small subset of html markup:
     #   <b>bold</b>
@@ -64,7 +64,7 @@
     # the top and down respectevly.
     # The width can be negative.  In this case the actual width is the
     # screen width minus the width defined in within the geometry option.
-    geometry = "500x5+10+10"
+    geometry = "x1+0+30"
     
     # Shrink window if it's smaller than the width.  Will be ignored if
     # width is 0.
@@ -73,7 +73,7 @@
     # The transparency of the window.  Range: [0; 100].
     # This option will only work if a compositing windowmanager is
     # present (e.g. xcompmgr, compiz, etc.).
-    transparency = 0
+    transparency = 30
     
     # Don't remove messages, if the user is idle (no mouse or keyboard input)
     # for longer than idle_threshold seconds.
@@ -180,9 +180,9 @@
     timeout = 5
 
 [urgency_normal]
-    background = "#aaaaaa"
-    foreground = "#140e12"
-    timeout = 3
+    background = "#1d2021"
+    foreground = "#9d8f7c"
+    timeout = 5
 
 [urgency_critical]
     background = "#660000"

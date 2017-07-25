@@ -58,7 +58,7 @@ modules-center = mpd
 modules-right = volume
 
 tray-position = none
-tray-padding = 1
+tray-padding= 2
 tray-maxsize = 22
 ;tray-transparent = true
 ;tray-background = #0063ff
@@ -109,9 +109,9 @@ font-2 = siji:pixelsize=12;1
 
 ;modules-left = bspwm i3
 modules-left = i3
-modules-center = wlan eth
+modules-center = date
 ;modules-right = filesystem xbacklight volume xkeyboard memory cpu wlan eth battery temperature date powermenu
-modules-right =  xkeyboard memory cpu temperature date
+modules-right =  xkeyboard memory cpu temperature wlan eth
 
 tray-position = right
 tray-padding = 1
@@ -207,8 +207,8 @@ label-mode-background = #f00
 ; focused = Active workspace on focused monitor
 label-focused = %name%
 label-focused-background = ${colors.background}
-label-focused-foreground = #c1941a
-label-focused-underline = #c1941a
+label-focused-foreground = #c834c3
+label-focused-underline = #c834c3
 label-focused-padding = 4
 
 ; unfocused = Inactive workspace on any monitor

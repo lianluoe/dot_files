@@ -9,10 +9,10 @@
 
 [colors]
 ;background = ${xrdb:color0:#222}
-background = #bb1d2021
+background = #aa000000
 background-alt = #444
-foreground = ${xrdb:color7:#222}
-;foreground = #dfdfdf
+;foreground = ${xrdb:color7:#222}
+foreground = #fff
 foreground-alt = #555
 primary = #ffb52a
 secondary = #e60053
@@ -40,20 +40,20 @@ border-size = 0
 ;border-bottom-size = 0
 border-color = #00000000
 
-padding-left = 0
-padding-right = 0
+padding-left = 1
+padding-right = 1
 
 module-margin-left = 4
 module-margin-right = 4
 
 font-0 = fontawesome:size=12;1
-font-1 = monospace:size=12;1
+font-1 = DejaVuSans-Mono:size=12;1
 #font-1 = unifont:fontformat=truetype:size=8:antialias=false;0
 font-2 = siji:pixelsize=12;1
 
 ;modules-left = bspwm i3
-modules-left = battery
-modules-center = mpd
+modules-left = battery xwindow
+modules-center = 
 ;modules-right = filesystem xbacklight volume xkeyboard memory cpu wlan eth battery temperature date powermenu
 modules-right = volume
 
@@ -96,14 +96,14 @@ border-size = 0
 ;border-bottom-size = 25
 border-color = #00000000
 
-padding-left = 0
-padding-right = 0
+padding-left = 1
+padding-right = 1
 
 module-margin-left = 4
 module-margin-right = 4
 
 font-0 = fontawesome:size=12;1
-font-1 = monospace:size=12;1
+font-1 = DejaVuSans-Mono:size=12;1
 #font-1 = unifont:fontformat=truetype:size=8:antialias=false;0
 font-2 = siji:pixelsize=12;1
 
@@ -111,7 +111,7 @@ font-2 = siji:pixelsize=12;1
 modules-left = i3
 modules-center = date
 ;modules-right = filesystem xbacklight volume xkeyboard memory cpu wlan eth battery temperature date powermenu
-modules-right =  xkeyboard memory cpu temperature wlan eth
+modules-right =  xkeyboard xbacklight-acpi memory cpu temperature wlan eth
 
 tray-position = right
 tray-padding = 1
@@ -132,7 +132,7 @@ tray-maxsize = 22
 
 [module/xwindow]
 type = internal/xwindow
-label = %title:0:30:...%
+label = %title:0:50:...%
 
 [module/xkeyboard]
 type = internal/xkeyboard
@@ -255,15 +255,15 @@ format =  <label> <bar>
 label = %percentage%%
 
 bar-width = 10
-bar-indicator = ➤
+bar-indicator = 
 bar-indicator-foreground = #fff
 bar-indicator-font = 2
-bar-fill = ─
+bar-fill = 
 bar-fill-font = 2
 bar-fill-foreground = #9f78e1
-bar-empty = ─
+bar-empty = 
 bar-empty-font = 2
-bar-empty-foreground = ${colors.foreground-alt}
+bar-empty-foreground = #fff
 
 [module/backlight-acpi]
 inherit = module/xbacklight
@@ -273,20 +273,21 @@ card = intel_backlight
 [module/cpu]
 type = internal/cpu
 interval = 2
-format = <label> <ramp-coreload>
+format = <label>
+format-foreground = #fff
 format-prefix = " "
 format-prefix-foreground = #cd1f3f
 format-underline = #cd1f3f
 label = %percentage%%
 
-ramp-coreload-0 = %{F#b5808b}▁%{F-}
-ramp-coreload-1 = %{F#b17380}▂%{F-}
-ramp-coreload-2 = %{F#a76371}▃%{F-}
-ramp-coreload-3 = %{F#a75364}▄%{F-}
-ramp-coreload-4 = %{F#a24155}▅%{F-}
-ramp-coreload-5 = %{F#9f334a}▆%{F-}
-ramp-coreload-6 = %{F#a02b44}▇%{F-}
-ramp-coreload-7 = %{F#9c1e3a}█%{F-}
+;ramp-coreload-0 = %{F#b5808b}▁%{F-}
+;ramp-coreload-1 = %{F#b17380}▂%{F-}
+;ramp-coreload-2 = %{F#a76371}▃%{F-}
+;ramp-coreload-3 = %{F#a75364}▄%{F-}
+;ramp-coreload-4 = %{F#a24155}▅%{F-}
+;ramp-coreload-5 = %{F#9f334a}▆%{F-}
+;ramp-coreload-6 = %{F#a02b44}▇%{F-}
+;ramp-coreload-7 = %{F#9c1e3a}█%{F-}
 
 [module/memory]
 type = internal/memory
@@ -300,19 +301,17 @@ label = %gb_used%
 bar-used-indicator =
 bar-used-width = 10
 bar-used-foreground-0 = #3384d0
-bar-used-foreground-1 = #3384d0
-bar-used-foreground-2 = #3384d0
-bar-used-foreground-3 = #3384d0
 bar-used-fill = 
 bar-used-empty = 
-bar-used-empty-foreground = #444444
+bar-used-empty-foreground = #ffffff
 
 [module/wlan]
 type = internal/network
 interface = wlp59s0
 interval = 3.0
 
-format-connected = <ramp-signal> <label-connected>
+format-connected = <label-connected>
+format-connected-foreground = #7e52c6
 format-connected-underline = #7e52c6
 label-connected = %essid%
 
@@ -431,6 +430,7 @@ thermal-zone = 0
 warn-temperature = 60
 
 format = <ramp> <label>
+format-foreground = #fff
 format-underline = #c72581
 format-warn = <ramp> <label-warn>
 format-warn-underline = #c7254f

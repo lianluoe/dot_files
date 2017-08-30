@@ -25,7 +25,7 @@ height = 30
 ;offset-x = 1%
 ;offset-y = 1%
 radius = 0.0
-fixed-center = false
+fixed-center = true
 
 background = ${colors.background}
 foreground = ${colors.foreground}
@@ -53,7 +53,7 @@ font-2 = siji:pixelsize=12;1
 
 ;modules-left = bspwm i3
 modules-left = battery xwindow
-modules-center = 
+modules-center = mocp
 ;modules-right = filesystem xbacklight volume xkeyboard memory cpu wlan eth battery temperature date powermenu
 modules-right = volume
 
@@ -80,7 +80,7 @@ height = 30
 ;offset-x = 1%
 ;offset-y = 1%
 radius = 0.0
-fixed-center = false
+fixed-center = true
 bottom = true
 
 background = ${colors.background}
@@ -485,3 +485,20 @@ margin-top = 0
 margin-bottom = 0
 
 ; vim:ft=dosini
+
+[module/mocp]
+type = custom/script
+exec = ~/bin/moc_polybar.sh
+interval = 5
+
+;format = <label>
+format-foreground = #fff
+format-padding = 2
+format-underline = #ff0
+format-prefix = "  "
+format-prefix-foreground = #ff0
+
+click-left = mocp --toggle-pause
+
+;label = %output:0:40%...
+
